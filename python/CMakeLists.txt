@@ -133,6 +133,7 @@ if(ACEtk.python)
         ${CMAKE_CURRENT_SOURCE_DIR}/src/multigroup/EditReactionNumberBlock.python.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/multigroup/EditCrossSectionBlock.python.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/multigroup/SecondaryParticleTypeBlock.python.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/multigroup/SecondaryParticleGroupStructureData.python.cpp
         )
 
     target_link_libraries(ACEtk.python PRIVATE njoy::ACEtk)

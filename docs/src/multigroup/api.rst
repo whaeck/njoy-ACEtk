@@ -17,3 +17,4 @@ API
    api/EditReactionNumberBlock
    api/EditCrossSectionBlock
    api/SecondaryParticleTypeBlock
+   api/SecondaryParticleGroupStructureData
