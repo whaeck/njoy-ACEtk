@@ -21,7 +21,7 @@ namespace multigroup {
   void wrapEditReactionNumberBlock( python::module&, python::module& );
   void wrapEditCrossSectionBlock( python::module&, python::module& );
   void wrapSecondaryParticleTypeBlock( python::module&, python::module& );
-  void wrapSecondaryParticleGroupStructureData( python::module&, python::module& );
+  void wrapSecondaryParticleGroupStructureBlock( python::module&, python::module& );
 }
 
 void wrapMultigroup( python::module& module, python::module& viewmodule ) {
@@ -43,5 +43,5 @@ void wrapMultigroup( python::module& module, python::module& viewmodule ) {
   multigroup::wrapEditReactionNumberBlock( submodule, viewmodule );
   multigroup::wrapEditCrossSectionBlock( submodule, viewmodule );
   multigroup::wrapSecondaryParticleTypeBlock( submodule, viewmodule );
-  multigroup::wrapSecondaryParticleGroupStructureData( submodule, viewmodule );
+  multigroup::wrapSecondaryParticleGroupStructureBlock( submodule, viewmodule );
 }

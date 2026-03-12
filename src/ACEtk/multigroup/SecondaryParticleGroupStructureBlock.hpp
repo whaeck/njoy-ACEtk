@@ -1,5 +1,5 @@
-#ifndef NJOY_ACETK_MULTIGROUP_SECONDARYPARTICLEGROUPSTRUCTUREDATA
-#define NJOY_ACETK_MULTIGROUP_SECONDARYPARTICLEGROUPSTRUCTUREDATA
+#ifndef NJOY_ACETK_MULTIGROUP_SECONDARYPARTICLEGROUPSTRUCTUREBLOCK
+#define NJOY_ACETK_MULTIGROUP_SECONDARYPARTICLEGROUPSTRUCTUREBLOCK
 
 // system includes
 
@@ -14,13 +14,13 @@ namespace multigroup {
  *  @class
  *  @brief The multigroup energy ERG2 block with the secondary particle group structures
  *
- *  The SecondaryParticleGroupStructureData class contains 2 arrays of the same length:
+ *  The SecondaryParticleGroupStructureBlock class contains 2 arrays of the same length:
  *    - the mean energies of each group (in MeV)
  *    - the widths of each group (in MeV)
  *
  *  The size of each (the total number of energy groups), NERG, is LERG2(i).
  */
-class SecondaryParticleGroupStructureData : protected base::ArrayData {
+class SecondaryParticleGroupStructureBlock : protected base::ArrayData {
 
   /* fields */
 
@@ -29,7 +29,7 @@ class SecondaryParticleGroupStructureData : protected base::ArrayData {
 public:
 
   /* constructor */
-  #include "ACEtk/multigroup/SecondaryParticleGroupStructureData/src/ctor.hpp"
+  #include "ACEtk/multigroup/SecondaryParticleGroupStructureBlock/src/ctor.hpp"
 
   /* methods */
 
@@ -72,7 +72,7 @@ public:
   using ArrayData::end;
 };
 
-using ERG2 = SecondaryParticleGroupStructureData;
+using ERG2 = SecondaryParticleGroupStructureBlock;
 
 } // multigroup namespace
 } // ACEtk namespace

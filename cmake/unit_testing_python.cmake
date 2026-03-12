@@ -142,4 +142,4 @@ add_python_test( multigroup.MomentumTransferBlock                 multigroup/Tes
 add_python_test( multigroup.EditReactionNumberBlock               multigroup/Test_ACEtk_multigroup_EditReactionNumberBlock.py )
 add_python_test( multigroup.EditCrossSectionBlock                 multigroup/Test_ACEtk_multigroup_EditCrossSectionBlock.py )
 add_python_test( multigroup.SecondaryParticleTypeBlock            multigroup/Test_ACEtk_multigroup_SecondaryParticleTypeBlock.py )
-add_python_test( multigroup.SecondaryParticleGroupStructureData   multigroup/Test_ACEtk_multigroup_SecondaryParticleGroupStructureData.py )
+add_python_test( multigroup.SecondaryParticleGroupStructureBlock   multigroup/Test_ACEtk_multigroup_SecondaryParticleGroupStructureBlock.py )

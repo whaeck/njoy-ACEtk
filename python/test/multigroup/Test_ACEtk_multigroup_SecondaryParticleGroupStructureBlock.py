@@ -4,10 +4,10 @@ import unittest
 # third party imports
 
 # local imports
-from ACEtk.multigroup import SecondaryParticleGroupStructureData
+from ACEtk.multigroup import SecondaryParticleGroupStructureBlock
 
-class Test_ACEtk_multigroup_SecondaryParticleGroupStructureData( unittest.TestCase ) :
-    """Unit test for the SecondaryParticleGroupStructureData class."""
+class Test_ACEtk_multigroup_SecondaryParticleGroupStructureBlock( unittest.TestCase ) :
+    """Unit test for the SecondaryParticleGroupStructureBlock class."""
 
     chunk = [     
   1.450000000000E+01,  8.500000000000E+00,  7.500000000000E+00,  6.500000000000E+00,  
@@ -46,7 +46,7 @@ class Test_ACEtk_multigroup_SecondaryParticleGroupStructureData( unittest.TestCa
                 self.assertAlmostEqual( self.chunk[index], xss[index] )
 
         # the data is given explicitly
-        chunk = SecondaryParticleGroupStructureData(
+        chunk = SecondaryParticleGroupStructureBlock(
           group_means =  [ 1.450000000000E+01,  8.500000000000E+00,  7.500000000000E+00,  6.500000000000E+00,  
                            5.500000000000E+00,  4.500000000000E+00,  3.500000000000E+00,  2.500000000000E+00,  
                            1.500000000000E+00,  7.500000000000E-01,  3.000000000000E-01,  5.500000000000E-02 ],

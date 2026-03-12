@@ -3,7 +3,7 @@
 #include <pybind11/stl.h>
 
 // local includes
-#include "ACEtk/multigroup/SecondaryParticleGroupStructureData.hpp"
+#include "ACEtk/multigroup/SecondaryParticleGroupStructureBlock.hpp"
 #include "tools/views/views-python.hpp"
 #include "definitions.hpp"
 
@@ -12,11 +12,11 @@ namespace python = pybind11;
 
 namespace multigroup {
 
-void wrapSecondaryParticleGroupStructureData( python::module& module,
+void wrapSecondaryParticleGroupStructureBlock( python::module& module,
                                           python::module& ) {
 
   // type aliases
-  using Block = njoy::ACEtk::multigroup::SecondaryParticleGroupStructureData;
+  using Block = njoy::ACEtk::multigroup::SecondaryParticleGroupStructureBlock;
 
   // wrap views created by this block
 
@@ -24,9 +24,9 @@ void wrapSecondaryParticleGroupStructureData( python::module& module,
   python::class_< Block > block(
 
     module,
-    "SecondaryParticleGroupStructureData",
+    "SecondaryParticleGroupStructureBlock",
     "The multigroup secondary particle group structure block\n\n"
-    "The SecondaryParticleGroupStructureData class contains 2 arrays of the same length:\n"
+    "The SecondaryParticleGroupStructureBlock class contains 2 arrays of the same length:\n"
     "  - the mean energies of each group (in MeV)\n"
     "  - the widths of each group (in MeV)\n"
     "The size of each (the total number of energy groups), NERG, is LERG2(i).\n\n"

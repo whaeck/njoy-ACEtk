@@ -4,20 +4,20 @@
 using Catch::Matchers::WithinRel;
 
 // what we are testing
-#include "ACEtk/multigroup/SecondaryParticleGroupStructureData.hpp"
+#include "ACEtk/multigroup/SecondaryParticleGroupStructureBlock.hpp"
 
 // other includes
 
 // convenience typedefs
 using namespace njoy::ACEtk;
-using SecondaryParticleGroupStructureData = multigroup::SecondaryParticleGroupStructureData;
+using SecondaryParticleGroupStructureBlock = multigroup::SecondaryParticleGroupStructureBlock;
 
 std::vector< double > chunk();
-void verifyChunk( const SecondaryParticleGroupStructureData&, const std::vector< double >& );
+void verifyChunk( const SecondaryParticleGroupStructureBlock&, const std::vector< double >& );
 
-SCENARIO( "SecondaryParticleGroupStructureData" ) {
+SCENARIO( "SecondaryParticleGroupStructureBlock" ) {
 
-  GIVEN( "valid data for a SecondaryParticleGroupStructureData instance" ) {
+  GIVEN( "valid data for a SecondaryParticleGroupStructureBlock instance" ) {
 
     std::vector< double > xss = chunk();
 
@@ -37,10 +37,10 @@ SCENARIO( "SecondaryParticleGroupStructureData" ) {
           1,  5.000000000000E-01,  4.000000000000E-01,  9.000000000000E-02  
       };
 
-      SecondaryParticleGroupStructureData chunk( std::move( centers ),
+      SecondaryParticleGroupStructureBlock chunk( std::move( centers ),
                                         std::move( widths ));
 
-      THEN( "a SecondaryParticleGroupStructureData can be constructed and members can "
+      THEN( "a SecondaryParticleGroupStructureBlock can be constructed and members can "
             "be tested" ) {
 
         verifyChunk( chunk, xss );
@@ -49,9 +49,9 @@ SCENARIO( "SecondaryParticleGroupStructureData" ) {
 
     WHEN( "the data is defined by iterators" ) {
 
-      SecondaryParticleGroupStructureData chunk( xss.begin(), xss.end(), 12 );
+      SecondaryParticleGroupStructureBlock chunk( xss.begin(), xss.end(), 12 );
 
-      THEN( "a SecondaryParticleGroupStructureData can be constructed and members can "
+      THEN( "a SecondaryParticleGroupStructureBlock can be constructed and members can "
             "be tested" ) {
 
         verifyChunk( chunk, xss );
@@ -60,10 +60,10 @@ SCENARIO( "SecondaryParticleGroupStructureData" ) {
 
     WHEN( "using the copy constructor" ) {
 
-      SecondaryParticleGroupStructureData chunk( xss.begin(), xss.end(), 12 );
-      SecondaryParticleGroupStructureData copy( chunk );
+      SecondaryParticleGroupStructureBlock chunk( xss.begin(), xss.end(), 12 );
+      SecondaryParticleGroupStructureBlock copy( chunk );
 
-      THEN( "an SecondaryParticleGroupStructureData can be constructed and "
+      THEN( "an SecondaryParticleGroupStructureBlock can be constructed and "
             "members can be tested" ) {
 
         verifyChunk( copy, xss );
@@ -72,10 +72,10 @@ SCENARIO( "SecondaryParticleGroupStructureData" ) {
 
     WHEN( "using the move constructor" ) {
 
-      SecondaryParticleGroupStructureData chunk( xss.begin(), xss.end(), 12 );
-      SecondaryParticleGroupStructureData move( std::move( chunk ) );
+      SecondaryParticleGroupStructureBlock chunk( xss.begin(), xss.end(), 12 );
+      SecondaryParticleGroupStructureBlock move( std::move( chunk ) );
 
-      THEN( "an SecondaryParticleGroupStructureData can be constructed and "
+      THEN( "an SecondaryParticleGroupStructureBlock can be constructed and "
             "members can be tested" ) {
 
         verifyChunk( move, xss );
@@ -98,7 +98,7 @@ std::vector< double > chunk() {
   };
 }
 
-void verifyChunk( const SecondaryParticleGroupStructureData& chunk,
+void verifyChunk( const SecondaryParticleGroupStructureBlock& chunk,
                   const std::vector< double >& xss ) {
 
   // XSS
