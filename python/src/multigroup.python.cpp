@@ -22,6 +22,7 @@ namespace multigroup {
   void wrapEditCrossSectionBlock( python::module&, python::module& );
   void wrapSecondaryParticleTypeBlock( python::module&, python::module& );
   void wrapSecondaryParticleGroupStructureBlock( python::module&, python::module& );
+  void wrapSecondaryParticleGroupStructureLocatorBlock( python::module&, python::module& );
 }
 
 void wrapMultigroup( python::module& module, python::module& viewmodule ) {
@@ -44,4 +45,5 @@ void wrapMultigroup( python::module& module, python::module& viewmodule ) {
   multigroup::wrapEditCrossSectionBlock( submodule, viewmodule );
   multigroup::wrapSecondaryParticleTypeBlock( submodule, viewmodule );
   multigroup::wrapSecondaryParticleGroupStructureBlock( submodule, viewmodule );
+  multigroup::wrapSecondaryParticleGroupStructureLocatorBlock( submodule, viewmodule );
 }

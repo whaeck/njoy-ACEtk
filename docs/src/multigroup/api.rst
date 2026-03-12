@@ -18,3 +18,4 @@ API
    api/EditCrossSectionBlock
    api/SecondaryParticleTypeBlock
    api/SecondaryParticleGroupStructureBlock
+   api/SecondaryParticleGroupStructureLocatorBlock
