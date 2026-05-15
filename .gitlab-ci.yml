@@ -33,7 +33,6 @@ trigger_ci_downstream:
 
 check:
   stage: check_ok
-  stage: check_ok
   tags:
     - wrs
     - AVX2
