@@ -33,7 +33,7 @@ trigger_ci_downstream:
 
 check:
   stage: check_ok
-  tag:
+  tags:
     - wrs
 
   artifacts:
