@@ -18,6 +18,10 @@ trigger_ci_downstream:
     - if: '$DEPLOY_CODE == "1"'
       variables:
         DEPLOY_CODE_PASS: $DEPLOY_CODE
+    - if: '$DEPLOY_CODE == "2"'
+      variables:
+        DEPLOY_CODE_PASS: $DEPLOY_CODE
+
 
   trigger:
     project: NJOY/common_ci
