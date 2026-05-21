@@ -19,7 +19,6 @@ trigger_ci_downstream:
       variables:
         DEPLOY_CODE_PASS: $DEPLOY_CODE
 
-
   trigger:
     project: NJOY/common_ci
     branch: rocinante_deployment
@@ -34,6 +33,8 @@ trigger_ci_downstream:
 
 check:
   stage: check_ok
+  tag:
+    - wrs
 
   artifacts:
     expire_in: 30d
