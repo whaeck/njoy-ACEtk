@@ -24,7 +24,7 @@ trigger_ci_downstream:
 
   trigger:
     project: NJOY/common_ci
-    branch: rocinante_deployment
+    branch: main
     strategy: depend
 
   variables:
