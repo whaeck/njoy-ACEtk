@@ -32,9 +32,12 @@ if(ACEtk.tests)
       GIT_REPOSITORY  ../../catchorg/Catch2
       GIT_TAG         3f0283de7a9c43200033da996ff9093be3ac84dc # tag: v3.3.2
       )
+
+  set( BUILD_SHARED_LIBS ON )
   shacl_FetchContent_MakeAvailable(
       Catch2
     )
+  set( BUILD_SHARED_LIBS OFF )
 endif()
 
 shacl_FetchContent_MakeAvailable(
