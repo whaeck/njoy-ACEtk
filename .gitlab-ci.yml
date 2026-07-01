@@ -18,6 +18,9 @@ trigger_ci_downstream:
     - if: '$DEPLOY_CODE == "1"'
       variables:
         DEPLOY_CODE_PASS: $DEPLOY_CODE
+    - if: '$DEPLOY_CODE == "2"'
+      variables:
+        DEPLOY_CODE_PASS: $DEPLOY_CODE
 
   trigger:
     project: NJOY/common_ci
@@ -35,7 +38,6 @@ check:
   stage: check_ok
   tags:
     - wrs
-    - AVX2
 
   artifacts:
     expire_in: 30d
