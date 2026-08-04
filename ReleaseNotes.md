@@ -1,6 +1,13 @@
 # Release Notes&mdash;ACEtk
 Given here are some release notes for ACEtk.
 
+## ACEtk v1.2.0
+This adds support for the multigroup ACE file type.
+
+This fixes the following issues in ACEtk:
+  - The photon production cross section block is now returned properly when using the human
+    readable function (the ACE speak SIGP function worked properly and is not impacted).
+
 ## ACEtk v1.1.0
 This adds support for the electron table ACE file type (e.g., `el` and `el03` libraries).
   - Added `ElectronTable` class and component block classes. This class supports two different but
