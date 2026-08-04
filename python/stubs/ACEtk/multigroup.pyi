@@ -3,7 +3,7 @@ Multigroup MC ACE blocks and components
 """
 from __future__ import annotations
 import typing
-__all__: list[str] = ['AbsorptionCrossSectionBlock', 'EditCrossSectionBlock', 'EditReactionNumberBlock', 'FissionChiDataBlock', 'FissionCrossSectionBlock', 'IncidentParticleGroupStructureBlock', 'MomentumTransferBlock', 'SecondaryParticleTypeBlock', 'StoppingPowerBlock', 'TotalCrossSectionBlock']
+__all__: list[str] = ['AbsorptionCrossSectionBlock', 'EditCrossSectionBlock', 'EditReactionNumberBlock', 'FissionChiDataBlock', 'FissionCrossSectionBlock', 'IncidentParticleGroupStructureBlock', 'MomentumTransferBlock', 'SecondaryParticleGroupStructureBlock', 'SecondaryParticleGroupStructureLocatorBlock', 'SecondaryParticleTypeBlock', 'StoppingPowerBlock', 'TotalCrossSectionBlock']
 class AbsorptionCrossSectionBlock:
     """
     The multigroup absorption cross section block
@@ -672,6 +672,192 @@ class MomentumTransferBlock:
     def number_energy_groups(self) -> int:
         """
         The number of energy groups
+        """
+    @property
+    def xss_array(self) -> ...:
+        """
+        The xss array of the block
+        """
+class SecondaryParticleGroupStructureBlock:
+    """
+    The multigroup secondary particle group structure block
+    
+    The SecondaryParticleGroupStructureBlock class contains 2 arrays of the same length:
+      - the mean energies of each group (in MeV)
+      - the widths of each group (in MeV)
+    The size of each (the total number of energy groups), NERG, is LERG2(i).
+    
+    Parameters
+    ----------
+        group_means : list of floats 
+            the mean energies of each group in MeV 
+        group_widths : list of floats 
+            the widths of each group in MeV 
+    
+    """
+    def __init__(self, group_means: list[float], group_widths: list[float]) -> None:
+        """
+        Create the ERG2 block with group means and widths 
+        """
+    @typing.overload
+    def xss(self, index: int) -> float:
+        """
+        Return a value from the xss array of the block
+        
+        Arguments:
+            self     the data block
+            index    the index (one-based)
+        """
+    @typing.overload
+    def xss(self, index: int, length: int) -> ...:
+        """
+        Return a subrange of a given length from the xss array of the block
+        
+        Arguments:
+            self      the data block
+            index     the index (one-based)
+            length    the length of the subrange
+        """
+    @property
+    def ECENT2(self) -> ...:
+        """
+        The mean energies of each group in MeV
+        """
+    @property
+    def EWID2(self) -> ...:
+        """
+        The widths of each group MeV
+        """
+    @property
+    def NERG(self) -> int:
+        """
+        The number of energy groups
+        """
+    @property
+    def empty(self) -> bool:
+        """
+        Whether or not the block is empty
+        """
+    @property
+    def group_means(self) -> ...:
+        """
+        The mean energies of each group in MeV
+        """
+    @property
+    def group_widths(self) -> ...:
+        """
+        The widths of each group MeV
+        """
+    @property
+    def length(self) -> int:
+        """
+        The length of the the xss array of the block
+        """
+    @property
+    def name(self) -> str:
+        """
+        The name of the block
+        """
+    @property
+    def number_energy_groups(self) -> int:
+        """
+        The number of energy groups
+        """
+    @property
+    def xss_array(self) -> ...:
+        """
+        The xss array of the block
+        """
+class SecondaryParticleGroupStructureLocatorBlock:
+    """
+    The multigroup ERG2L block with locators for the group structure block(s)
+    for the secondary particle(s)
+    
+    The SecondaryParticleGroupStructureLocatorBlock class contains NSEC locators, one for each
+    secondary particle type given in the IPT block.
+    The number of secondary particle types is stored in NXS(8).
+    
+    Parameters
+    ----------
+        locators : list of int 
+            the locators for each secondary particle type
+    
+    """
+    def ERG2(self, particle: int) -> int:
+        """
+        The locator for a secondary particle index 
+        
+        Parameters
+        ----------
+            particle : int 
+                the secondary particle index (one-based)
+        
+        Returns
+        -------
+            int 
+                The locator
+        """
+    def __init__(self, locators: list[int]) -> None:
+        """
+        Create the block
+        """
+    def locator(self, particle: int) -> int:
+        """
+        The locator for a secondary particle index 
+        
+        Parameters
+        ----------
+            particle : int 
+                the secondary particle index (one-based)
+        
+        Returns
+        -------
+            int 
+                The locator
+        """
+    @typing.overload
+    def xss(self, index: int) -> float:
+        """
+        Return a value from the xss array of the block
+        
+        Arguments:
+            self     the data block
+            index    the index (one-based)
+        """
+    @typing.overload
+    def xss(self, index: int, length: int) -> ...:
+        """
+        Return a subrange of a given length from the xss array of the block
+        
+        Arguments:
+            self      the data block
+            index     the index (one-based)
+            length    the length of the subrange
+        """
+    @property
+    def NSEC(self) -> int:
+        """
+        The number of secondary particle types
+        """
+    @property
+    def empty(self) -> bool:
+        """
+        Whether or not the block is empty
+        """
+    @property
+    def length(self) -> int:
+        """
+        The length of the the xss array of the block
+        """
+    @property
+    def name(self) -> str:
+        """
+        The name of the block
+        """
+    @property
+    def number_secondary_particle_types(self) -> int:
+        """
+        The number of secondary particle types
         """
     @property
     def xss_array(self) -> ...:

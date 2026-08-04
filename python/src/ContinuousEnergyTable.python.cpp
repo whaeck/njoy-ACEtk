@@ -407,7 +407,7 @@ void wrapContinuousEnergyTable( python::module& module, python::module& ) {
   .def_property_readonly(
 
     "photon_production_cross_section_block",
-    &Table::crossSectionBlock,
+    &Table::photonProductionCrossSectionBlock,
     "The photon production cross section block"
   )
   .def_property_readonly(
