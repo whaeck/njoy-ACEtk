@@ -245,7 +245,7 @@ class ContinuousEnergyTable:
             self     the block
             index    the index (one-based)
         """
-    def secondary_particle_production_cross_section_block(self, index: int) -> continuous.FrameAndMultiplicityBlock:
+    def secondary_particle_production_cross_section_block(self, index: int) -> continuous.SecondaryParticleProductionCrossSectionBlock:
         """
         Return the production cross section block for a secondary particle index
         
@@ -559,7 +559,7 @@ class ContinuousEnergyTable:
         The photon production block
         """
     @property
-    def photon_production_cross_section_block(self) -> continuous.CrossSectionBlock:
+    def photon_production_cross_section_block(self) -> continuous.PhotonProductionCrossSectionBlock | None:
         """
         The photon production cross section block
         """
